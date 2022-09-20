@@ -9,27 +9,27 @@ public class salaryFunction {
 
         // déclaration des variables
 
-        float input = Float.parseFloat(args[1]);
+        // float input = Float.parseFloat(args[1]);
 
-        boolean bool1 = false;
+        // boolean bool1 = false;
 
-        float taxONSSPercent = 5.67f;
-        float taxONSS = 0.0f;
+        // float taxONSSPercent = 5.67f;
+        // float taxONSS = 0.0f;
 
-        float taxRevenuPercent = 0.0f;
-        float taxRevenu = 0.0f;
+        // float taxRevenuPercent = 0.0f;
+        // float taxRevenu = 0.0f;
 
-        float taxCommunalePercent = 6.59f;
-        float taxCommunale = 0.0f;
+        // float taxCommunalePercent = 6.59f;
+        // float taxCommunale = 0.0f;
 
-        float taxCSSS = 8.04f;
+        // float taxCSSS = 8.04f;
 
         //float parsedArgs0 = Float.parseFloat(args[0]);
 
         // choix du nombre de chiffres après la virgule.
-        DecimalFormat decimalFormatA = new DecimalFormat("#.#");
-        DecimalFormat decimalFormatB = new DecimalFormat("#.##");
-        DecimalFormat decimalFormatC = new DecimalFormat("#.###");
+        // DecimalFormat decimalFormatA = new DecimalFormat("#.#");
+        // DecimalFormat decimalFormatB = new DecimalFormat("#.##");
+        // DecimalFormat decimalFormatC = new DecimalFormat("#.###");
         // POST-IT : System.out.println(decimalFormatA.format(float1));
 
         // execution du programme.
@@ -57,7 +57,11 @@ public class salaryFunction {
             //System.err.println("Vous devez fournir un nombre comme paramètre !");
         //}
 
-        SalaireBrutVersNet(input);
+        // if (args.length > 0) {
+        //     SalaireBrutVersNet(input);
+        // } else {
+        //     System.err.println("Vous devez fournir un nombre comme paramètre !");
+        // }
 
     }
 
@@ -91,7 +95,7 @@ public class salaryFunction {
                         "\nTaxe communale (" + _taxCommunalePercent + "%) : -" + _taxCommunale +
                         "\nCSSS (Cotisation Spéciale á la Sécurité Sociale) : -" + _taxCSSS +
                         "\nImpôt total = -" + (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS) +
-                        "\n\nSalaire net : " + _result);
+                        "\n\nSalaire net : " + _decimalFormatA.format(_result));
         return _result;
     }
 
