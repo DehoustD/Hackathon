@@ -7,7 +7,10 @@ public class salaryFunction {
         // déclaration des variables
         boolean bool1 = false;
 
-        float taxPercent = 0.0f;
+        //float taxPercent = 0.0f;
+        float taxONSS = 5.67f;
+        float taxRevenu = 0.0f;
+        float taxCommunale = 0.0f;
         float parsedArgs0 = Float.parseFloat(args[0]);
 
         // choix du nombre de chiffres après la virgule.
@@ -20,8 +23,8 @@ public class salaryFunction {
 
         if (args.length > 0) {
 
-            taxPercent = TaxPercentCalc(parsedArgs0);
-            System.out.println("taxe : " + taxPercent + "%" + "\ncalcul : " + (parsedArgs0 - TaxCalculation(parsedArgs0, taxPercent)));
+            taxRevenu = TaxPercentCalc(parsedArgs0);
+            System.out.println("taxe : " + taxRevenu + "%" + "\ncalcul : " + (parsedArgs0 - TaxCalculation(parsedArgs0, taxRevenu)));
 
         } else {
             //System.err.println("Vous devez fournir au moins un paramètre, c'est à dire le nom d'une fonction !");
