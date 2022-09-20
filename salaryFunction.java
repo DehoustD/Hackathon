@@ -7,10 +7,16 @@ public class salaryFunction {
         // déclaration des variables
         boolean bool1 = false;
 
-        //float taxPercent = 0.0f;
-        float taxONSS = 5.67f;
+        float taxONSSPercent = 5.67f;
+        float taxONSS = 0.0f;
+
+        float taxRevenuPercent = 0.0f;
         float taxRevenu = 0.0f;
+
+        float taxCommunalePercent = 6.59f;
         float taxCommunale = 0.0f;
+
+        float taxCSSS = 8.04f;
         float parsedArgs0 = Float.parseFloat(args[0]);
 
         // choix du nombre de chiffres après la virgule.
@@ -21,15 +27,28 @@ public class salaryFunction {
 
         // execution du programme.
 
-        if (args.length > 0) {
+        //if (args.length > 0) {
 
-            taxRevenu = TaxPercentCalc(parsedArgs0);
-            System.out.println("taxe : " + taxRevenu + "%" + "\ncalcul : " + (parsedArgs0 - TaxCalculation(parsedArgs0, taxRevenu)));
+            taxRevenuPercent = TaxPercentCalc(parsedArgs0);
+            taxRevenu = TaxCalculation(parsedArgs0, taxRevenuPercent);
+            taxONSS = Percent(parsedArgs0, taxONSSPercent);
+            taxCommunale = Percent(parsedArgs0, taxCommunalePercent);
 
-        } else {
-            //System.err.println("Vous devez fournir au moins un paramètre, c'est à dire le nom d'une fonction !");
-            System.err.println("Vous devez fournir un nombre comme paramètre !");
-        }
+            System.out.println("\nONSS (Office National Sécurité Sociale) (" + taxONSSPercent + "%) : - " + decimalFormatA.format(taxONSS));
+
+            System.out.println("Impôt sur le revenu (" + (int)taxRevenuPercent + "%) : - " + taxRevenu);
+
+            System.out.println("Taxe communale (" + taxCommunalePercent + "%) : - " + taxCommunale);
+
+            System.out.println("CSSS (Cotisation Spéciale á la Sécurité Sociale) : - " + taxCSSS);
+
+            System.out.println("Impôt total = - " + (taxONSS + taxRevenu + taxCommunale + taxCSSS));
+
+            System.out.println("\nSalaire net : " + (parsedArgs0 - (taxONSS + taxRevenu + taxCommunale + taxCSSS)));
+
+        //} else {
+            //System.err.println("Vous devez fournir un nombre comme paramètre !");
+        //}
 
     }
 
@@ -51,5 +70,9 @@ public class salaryFunction {
     // fonction qui applique le pourcentage à la valeur entrée.
     static float TaxCalculation(float _value, float _taxPercent) {
         return (_value / 100) * _taxPercent;
+    }
+
+    static float Percent(float _value, float _percent){
+        return _value / 100 * _percent;
     }
 }
