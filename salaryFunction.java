@@ -8,6 +8,9 @@ public class salaryFunction {
         // args[1] peut etre le salaire.
 
         // déclaration des variables
+
+        float input = Float.parseFloat(args[1]);
+
         boolean bool1 = false;
 
         float taxONSSPercent = 5.67f;
@@ -54,7 +57,7 @@ public class salaryFunction {
             //System.err.println("Vous devez fournir un nombre comme paramètre !");
         //}
 
-        SalaireBrutVersNet(2200.0f);
+        SalaireBrutVersNet(input);
 
     }
 
