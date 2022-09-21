@@ -6,33 +6,18 @@ public class salaryFunction {
 
         // args[0] doit etre égal à un nom de fonction.
         // args[1] peut etre le salaire.
+        if(args[0].equals("SalaireBrutVersNet")){
+            float value = Float.parseFloat(args[1]);
+            SalaireBrutVersNet(value);
+        } else
+        if(args[0].equals("SalaireNetVersBrut")){
 
-        // déclaration des variables
-
-        // float input = Float.parseFloat(args[1]);
-
-        // boolean bool1 = false;
-
-        // float taxONSSPercent = 5.67f;
-        // float taxONSS = 0.0f;
-
-        // float taxRevenuPercent = 0.0f;
-        // float taxRevenu = 0.0f;
-
-        // float taxCommunalePercent = 6.59f;
-        // float taxCommunale = 0.0f;
-
-        // float taxCSSS = 8.04f;
-
-        //float parsedArgs0 = Float.parseFloat(args[0]);
-
+        }else{
+            System.err.println("Fonction "+args[0]+" inconnue.");
+        }
         // choix du nombre de chiffres après la virgule.
         // DecimalFormat decimalFormatA = new DecimalFormat("#.#");
-        // DecimalFormat decimalFormatB = new DecimalFormat("#.##");
-        // DecimalFormat decimalFormatC = new DecimalFormat("#.###");
         // POST-IT : System.out.println(decimalFormatA.format(float1));
-
-        // execution du programme.
 
         //if (args.length > 0) {
 
@@ -65,7 +50,7 @@ public class salaryFunction {
 
     }
 
-    static float SalaireBrutVersNet(float _value){
+    static void SalaireBrutVersNet(float _value){
 
         float _taxONSSPercent = 5.67f;
         float _taxONSS = 0.0f;
@@ -96,7 +81,6 @@ public class salaryFunction {
                         "\nCSSS (Cotisation Spéciale á la Sécurité Sociale) : -" + _taxCSSS +
                         "\nImpôt total = -" + (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS) +
                         "\n\nSalaire net : " + _decimalFormatA.format(_result));
-        return _result;
     }
 
     // fonction qui calcul la taxe en pourcantage.
