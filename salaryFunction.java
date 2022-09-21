@@ -73,15 +73,14 @@ public class salaryFunction {
 
         _result = _salary - (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS);
 
-        System.out.println("\nONSS (Office National Sécurité Sociale) (" + _taxONSSPercent + "%) : -"
-                + _decimalFormatA.format(_taxONSS) +
-                "<br aria-hidden=\"true\">\nCommune : " + _commune +
+        System.out.println("\nCommune : " + _commune +
                 "<br aria-hidden=\"true\">\nPerdiode : " + _perdiode +
+                "<br aria-hidden=\"true\">\nONSS (Office National Sécurité Sociale) (" + _taxONSSPercent + "%) : -"
+                + _decimalFormatA.format(_taxONSS) +
                 "<br aria-hidden=\"true\">\nImpôt sur le revenu (" + (int) _taxRevenuPercent + "%) : -" + _taxRevenu +
                 "<br aria-hidden=\"true\">\nTaxe communale (" + _taxCommunalePercent + "%) : -" + _taxCommunale +
                 "<br aria-hidden=\"true\">\nCSSS (Cotisation Spéciale á la Sécurité Sociale) : -"
-                + (_taxCSSS * _perdiodMult) +
-                "<br aria-hidden=\"true\">\nImpôt total = -"
+                + (_taxCSSS * _perdiodMult) + "<br aria-hidden=\"true\">\nImpôt total = -"
                 + (_taxONSS + _taxRevenu + _taxCommunale + (_taxCSSS * _perdiodMult)) +
                 "<br aria-hidden=\"true\">\n\nSalaire net : " + _decimalFormatA.format(_result));
     }
