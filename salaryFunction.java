@@ -4,19 +4,33 @@ public class salaryFunction {
 
     public static void main(String[] args) {
 
-        if(args[0].equals("SalaireBrutVersNet")){
-            float value = Float.parseFloat(args[1]);
-            SalaireBrutVersNet(value);
+        switch (args[0]) {
+            case "SalaireBrutVersNet":
+                float value = Float.parseFloat(args[1]);
+                SalaireBrutVersNet(value);
+
+                break;
+            case "SalaireNetVersBrut":
+                System.err.println("Fonction " + args[0] + " inconnue.");
+                break;
+            default:
+                System.err.println("Fonction " + args[0] + " inconnue.");
+                break;
         }
 
-        if(args[0].equals("SalaireNetVersBrut")){
+        // if (args[0].equals("SalaireBrutVersNet")) {
+        // float value = Float.parseFloat(args[1]);
+        // SalaireBrutVersNet(value);
+        // }
 
-        } else {
-            System.err.println("Fonction "+args[0]+" inconnue.");
-        }
+        // if (args[0].equals("SalaireNetVersBrut")) {
+
+        // } else {
+        // System.err.println("Fonction " + args[0] + " inconnue.");
+        // }
     }
 
-    static void SalaireBrutVersNet(float _value){
+    static void SalaireBrutVersNet(float _value) {
 
         float _taxONSSPercent = 5.67f;
         float _taxONSS = 0.0f;
@@ -41,12 +55,13 @@ public class salaryFunction {
 
         _result = _value - (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS);
 
-        System.out.println("\nONSS (Office National Sécurité Sociale) (" + _taxONSSPercent + "%) : -" + _decimalFormatA.format(_taxONSS) +
-                        "</br aria-hidden=\"true\">\nImpôt sur le revenu (" + (int)_taxRevenuPercent + "%) : -" + _taxRevenu +
-                        "</br aria-hidden=\"true\">\nTaxe communale (" + _taxCommunalePercent + "%) : -" + _taxCommunale +
-                        "<br/ aria-hidden=\"true\">\nCSSS (Cotisation Spéciale á la Sécurité Sociale) : -" + _taxCSSS +
-                        "<br/ aria-hidden=\"true\">\nImpôt total = -" + (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS) +
-                        "<br/ aria-hidden=\"true\">\n\nSalaire net : " + _decimalFormatA.format(_result));
+        System.out.println("\nONSS (Office National Sécurité Sociale) (" + _taxONSSPercent + "%) : -"
+                + _decimalFormatA.format(_taxONSS) +
+                "<br aria-hidden=\"true\">\nImpôt sur le revenu (" + (int) _taxRevenuPercent + "%) : -" + _taxRevenu +
+                "<br aria-hidden=\"true\">\nTaxe communale (" + _taxCommunalePercent + "%) : -" + _taxCommunale +
+                "<br aria-hidden=\"true\">\nCSSS (Cotisation Spéciale á la Sécurité Sociale) : -" + _taxCSSS +
+                "<br aria-hidden=\"true\">\nImpôt total = -" + (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS) +
+                "<br aria-hidden=\"true\">\n\nSalaire net : " + _decimalFormatA.format(_result));
     }
 
     // fonction qui calcul la taxe en pourcantage.
@@ -65,7 +80,7 @@ public class salaryFunction {
     }
 
     // fonction qui applique le pourcentage à la valeur entrée.
-    static float Percent(float _value, float _percent){
+    static float Percent(float _value, float _percent) {
         return _value / 100 * _percent;
     }
 }
