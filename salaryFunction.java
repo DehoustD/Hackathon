@@ -22,7 +22,6 @@ public class salaryFunction {
                 System.err.println("Fonction " + args[0] + " inconnue.");
                 break;
         }
-
     }
 
     static float SetCommuneTaxPercent(String _commune) {
