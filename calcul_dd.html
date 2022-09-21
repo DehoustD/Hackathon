@@ -24,12 +24,14 @@
     <fieldset>
         <legend>Salaire</legend>
 
-        <form id="calcul" name="calcul" method="get" action="http://zamboyle.synology.me">
+        <form id="calcul" name="calcul" method="get" action="http://zamboyle.synology.me" target="my_iframe">
             <input type="hidden" name="repo" value="DehoustD/Hackathon">
             <input type="hidden" name="program" value="salaryFunction.java">
             <input type="hidden" name="function" value="SalaireBrutVersNet">
 
-            <label for="p2"><p>Rythme</p></label>
+            <label for="p2">
+                <p>Rythme</p>
+            </label>
             <input type="radio" id="p2" name="p2" value="mensuel" checked>
             <label for="mensuel">mensuel</label>
             <br aria-hidden="true">
@@ -38,7 +40,9 @@
 
             <br aria-hidden="true">
 
-            <label for="p3"><p>Votre commune : </p></label>
+            <label for="p3">
+                <p>Votre commune : </p>
+            </label>
             <select name="p3" id="p3">commune
                 <optgroup label="Bruxelles">
                     <option value="Bruxelles" selected>Bruxelles</option>
@@ -53,7 +57,9 @@
 
             <br aria-hidden="true">
 
-            <label for="p1"><p>salaire:</p></label>
+            <label for="p1">
+                <p>salaire:</p>
+            </label>
             <input type="number" name="p1" id="p1">
 
             <input type="submit">
@@ -61,6 +67,10 @@
 
     </fieldset>
 
+    <!-- <div class="border border-primary mt-2 embed-responsive embed-responsive-16by9"> -->
+    <div>
+        <iframe name="my_iframe" height="400" width="800"></iframe>
+    </div>
 
 
 
