@@ -1,7 +1,11 @@
-body{
+body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h1{
+fieldset {
+    width: 70%;
+}
+
+h1 {
     font-size: 120%;
 }
