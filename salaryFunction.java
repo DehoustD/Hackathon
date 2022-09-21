@@ -23,21 +23,25 @@ public class salaryFunction {
                 break;
         }
 
-        // if (args[0].equals("SalaireBrutVersNet")) {
-        // float value = Float.parseFloat(args[1]);
-        // SalaireBrutVersNet(value);
-        // }
+    }
 
-        // if (args[0].equals("SalaireNetVersBrut")) {
-
-        // } else {
-        // System.err.println("Fonction " + args[0] + " inconnue.");
-        // }
+    static float SetCommuneTaxPercent(String _commune) {
+        switch (_commune) {
+            case "Bruxelles":
+                return 6.0f;
+            case "Mons":
+                return 8.0f;
+            case "Anvers":
+                return 8.0f;
+            default:
+            System.err.println("ERREUR -> commune");
+                return 0.0f;
+        }
     }
 
     static void SalaireBrutVersNet(float _salary, String _com, String _period) {
 
-        String _commune = _com;
+        //String _commune = _com;
         String _perdiode = _period; // mensuel ou annuel
         int _perdiodMult = 1;
 
@@ -58,6 +62,7 @@ public class salaryFunction {
 
         float _taxCommunalePercent = 6.59f;
         float _taxCommunale = 0.0f;
+        _taxCommunalePercent = SetCommuneTaxPercent(_com);
 
         float _taxCSSS = 8.04f;
 
@@ -73,8 +78,10 @@ public class salaryFunction {
 
         _result = _salary - (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS);
 
-        System.out.println("\nCommune : " + _commune +
+        System.out.println("Salaire brut : " + _salary +
+                "<br aria-hidden=\"true\">\nCommune : " + _com +
                 "<br aria-hidden=\"true\">\nPerdiode : " + _perdiode +
+                "<br aria-hidden=\"true\">" +
                 "<br aria-hidden=\"true\">\nONSS (Office National Sécurité Sociale) (" + _taxONSSPercent + "%) : -"
                 + _decimalFormatA.format(_taxONSS) +
                 "<br aria-hidden=\"true\">\nImpôt sur le revenu (" + (int) _taxRevenuPercent + "%) : -" + _taxRevenu +
