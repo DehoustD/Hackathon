@@ -4,10 +4,15 @@ public class salaryFunction {
 
     public static void main(String[] args) {
 
+        // args[0] = nom fonction
+        // args[1] = salaire
+        // args[2] = periode
+        // args[3] = commune
+
         switch (args[0]) {
             case "SalaireBrutVersNet":
                 float value = Float.parseFloat(args[1]);
-                SalaireBrutVersNet(value);
+                SalaireBrutVersNet(value, args[3], args[2]);
 
                 break;
             case "SalaireNetVersBrut":
@@ -30,7 +35,20 @@ public class salaryFunction {
         // }
     }
 
-    static void SalaireBrutVersNet(float _value) {
+    static void SalaireBrutVersNet(float _salary, String _com, String _period) {
+
+        String _commune = _com;
+        String _perdiode = _period; // mensuel ou annuel
+        int _perdiodMult = 1;
+
+        switch (_perdiode) {
+            case "mensuel":
+                _perdiodMult = 1;
+                break;
+            case "annuel":
+                _perdiodMult = 12;
+                break;
+        }
 
         float _taxONSSPercent = 5.67f;
         float _taxONSS = 0.0f;
@@ -47,20 +65,24 @@ public class salaryFunction {
 
         DecimalFormat _decimalFormatA = new DecimalFormat("#.#");
 
-        _taxRevenuPercent = TaxPercentCalc(_value);
+        _taxRevenuPercent = TaxPercentCalc(_salary);
 
-        _taxONSS = Percent(_value, _taxONSSPercent);
-        _taxRevenu = Percent(_value, _taxRevenuPercent);
-        _taxCommunale = Percent(_value, _taxCommunalePercent);
+        _taxONSS = Percent(_salary, _taxONSSPercent);
+        _taxRevenu = Percent(_salary, _taxRevenuPercent);
+        _taxCommunale = Percent(_salary, _taxCommunalePercent);
 
-        _result = _value - (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS);
+        _result = _salary - (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS);
 
         System.out.println("\nONSS (Office National Sécurité Sociale) (" + _taxONSSPercent + "%) : -"
                 + _decimalFormatA.format(_taxONSS) +
+                "<br aria-hidden=\"true\">\nCommune : " + _commune +
+                "<br aria-hidden=\"true\">\nPerdiode : " + _perdiode +
                 "<br aria-hidden=\"true\">\nImpôt sur le revenu (" + (int) _taxRevenuPercent + "%) : -" + _taxRevenu +
                 "<br aria-hidden=\"true\">\nTaxe communale (" + _taxCommunalePercent + "%) : -" + _taxCommunale +
-                "<br aria-hidden=\"true\">\nCSSS (Cotisation Spéciale á la Sécurité Sociale) : -" + _taxCSSS +
-                "<br aria-hidden=\"true\">\nImpôt total = -" + (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS) +
+                "<br aria-hidden=\"true\">\nCSSS (Cotisation Spéciale á la Sécurité Sociale) : -"
+                + (_taxCSSS * _perdiodMult) +
+                "<br aria-hidden=\"true\">\nImpôt total = -"
+                + (_taxONSS + _taxRevenu + _taxCommunale + (_taxCSSS * _perdiodMult)) +
                 "<br aria-hidden=\"true\">\n\nSalaire net : " + _decimalFormatA.format(_result));
     }
 
