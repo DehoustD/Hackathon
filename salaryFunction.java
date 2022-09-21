@@ -42,11 +42,11 @@ public class salaryFunction {
         _result = _value - (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS);
 
         System.out.println("\nONSS (Office National Sécurité Sociale) (" + _taxONSSPercent + "%) : -" + _decimalFormatA.format(_taxONSS) +
-                        "</br>\nImpôt sur le revenu (" + (int)_taxRevenuPercent + "%) : -" + _taxRevenu +
-                        "</br>\nTaxe communale (" + _taxCommunalePercent + "%) : -" + _taxCommunale +
-                        "<br/>\nCSSS (Cotisation Spéciale á la Sécurité Sociale) : -" + _taxCSSS +
-                        "<br/>\nImpôt total = -" + (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS) +
-                        "<br/>\n\nSalaire net : " + _decimalFormatA.format(_result));
+                        "</br aria-hidden=\"true\">\nImpôt sur le revenu (" + (int)_taxRevenuPercent + "%) : -" + _taxRevenu +
+                        "</br aria-hidden=\"true\">\nTaxe communale (" + _taxCommunalePercent + "%) : -" + _taxCommunale +
+                        "<br/ aria-hidden=\"true\">\nCSSS (Cotisation Spéciale á la Sécurité Sociale) : -" + _taxCSSS +
+                        "<br/ aria-hidden=\"true\">\nImpôt total = -" + (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS) +
+                        "<br/ aria-hidden=\"true\">\n\nSalaire net : " + _decimalFormatA.format(_result));
     }
 
     // fonction qui calcul la taxe en pourcantage.
