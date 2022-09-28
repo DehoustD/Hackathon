@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>site d'ADA-calculez vos revenus</title>
+
+     <!-- Bootstrap CSS v5.2 -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+     <!-- Bootstrap icônes v1.8.3 -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+ 
 </head>
 <body id="body">
 
@@ -27,6 +33,32 @@ salaire:
 <input type="number" name="p1" id="p1">
 
 <input type="submit">
+    </form>
+
+
+    <form id="calcul" name="calcul" action="http://zamboyle.synology.me" method="get">
+        <input id="repo" name="repo" type="hidden" value="DehoustD/Hackathon">
+        <input id="program" name="program" type="hidden" value="salaryFunction.java">
+            <label for="function" class="form-label">Fonction</label>
+            
+            <select id="function" name="function" class="form-select mb-3" required>
+                <option selected value="">Cliquez pour sélectionner une fonction</option>
+                <option value="helloworld">helloworld ()</option>
+                <option value="hi">hi (p1)</option>                    
+                <option value="hola" disabled>hola (p1)</option>
+                <option value="add">add (int p1, int p2)</option>
+                <option value="tablemultiplication">tablemultiplication (int table, int max)</option>
+                <option value="help">help ()</option>
+            </select>
+    
+            <label for="p1" class="form-label">Paramètre p1</label>
+            <input id="p1" name="p1" class="form-control" type="text">
+    
+            <div class="form-floating my-3">
+                <input id="p2" name="p2" class="form-control" type="text" placeholder="Paramètre p2">
+                <label for="p2" class="form-label">Paramètre p2</label>                    
+            </div>
+        <input type="submit" class="btn btn-primary" value="Envoyer">
     </form>
 
 </body>
