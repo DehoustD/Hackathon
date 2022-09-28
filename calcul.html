@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr-BE">
 <head>
+
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +16,12 @@
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
      <!-- Bootstrap icônes v1.8.3 -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+<<<<<<< HEAD
  
 >>>>>>> ea3c3d1549842c0a4e785f1fd7c7c0f94ef1c28c
+=======
+     <link rel="stylesheet" type="text/css" href="./styhles/calcul.css">
+>>>>>>> 9a5541f (modification final du jour)
 </head>
 <body id="body">
 
@@ -27,35 +34,20 @@
 
     <nav role="navigation"></nav>
 
-    <h1>Voici un moyen de connaitre votre salaire net</h1>
+    <h1>Voici un moyen de connaitre votre salaire net</h1> <br>
 
     <img aria-hidden="true" src="./resources/images/image_principale.jpeg" alt="">
-
-    <!-- <form id ="calcul" name="calcul" method="get" action="http://zamboyle.synology.me">
-<input type="hidden" name="repo" value="DehoustD/Hackathon">
-<input type="hidden" name="program" value="salaryFunction.java">
-<input type="hidden" name="function" value="SalaireBrutVersNet">
-
-            salaire:
-            <input type="number" name="p1" id="p1">
-
-            
-    
-            <div class="form-floating my-3">
-                <input id="prenom" name="prenom" class="form-control" type="text" placeholder="Prenom">
-                <label for="prenom" class="form-label">Prénom</label>                    
-            </div>
-            
-        <input type="submit" class="btn btn-primary" value="Envoyer">
-    </form> -->
+<br>
+<br>
+<fieldset>
 
     <form id="calcul" name="calcul" method="get" action="http://zamboyle.synology.me" target="my_iframe">
         <input type="hidden" name="repo" value="DehoustD/Hackathon">
         <input type="hidden" name="program" value="salaryFunction.java">
         <input type="hidden" name="function" value="SalaireBrutVersNet">
 
-        <label for="p2">
-            <p>Rythme</p>
+        <label for="p2"> <br>
+            <h3>Calculer votre salaire net</h3>
         </label>
 
         <div class="form-floating my-3">
@@ -68,11 +60,17 @@
             <label for="p4" class="form-label">Prénom</label>                    
         </div>  
 
+        <label for="p1">
+            <p>salaire brut:</p>
+        </label>
+        <input type="number" name="p1" id="p1"> <br>
+
+
         <input type="radio" id="p2" name="p2" value="mensuel" checked>
         <label for="mensuel">mensuel</label>
         <br aria-hidden="true">
         <input type="radio" id="p2" name="p2" value="annuel">
-        <label for="annuel">annuel</label>
+        <label for="annuel">annuel</label> <br>
 
         <br aria-hidden="true">
 
@@ -93,10 +91,7 @@
 
         <br aria-hidden="true">
 
-        <label for="p1">
-            <p>salaire:</p>
-        </label>
-        <input type="number" name="p1" id="p1">
+       
 
         <input type="submit" class="btn btn-primary" value="Envoyer">
 
@@ -104,6 +99,11 @@
     </form>
 
 </fieldset>
+<br>
+<br>
+<div>
+    <iframe name="my_iframe" height="400" width="800"></iframe>
+</div>
 
 
 

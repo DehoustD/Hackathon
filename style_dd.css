@@ -1,5 +1,7 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: blueviolet;
+    color: white;
 }
 
 fieldset {
@@ -9,3 +11,4 @@ fieldset {
 h1 {
     font-size: 120%;
 }
+
