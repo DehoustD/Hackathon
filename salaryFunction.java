@@ -8,12 +8,13 @@ public class salaryFunction {
         // args[1] = salaire
         // args[2] = periode
         // args[3] = commune
+        // args[4] = prenom
+        // args[5] = nom
 
         switch (args[0]) {
             case "SalaireBrutVersNet":
                 float value = Float.parseFloat(args[1]);
-                SalaireBrutVersNet(value, args[3], args[2]);
-
+                SalaireBrutVersNet(value, args[3], args[2], args[5], args[4]);
                 break;
             case "SalaireNetVersBrut":
                 System.err.println("Fonction " + args[0] + " inconnue.");
@@ -38,7 +39,7 @@ public class salaryFunction {
         }
     }
 
-    static void SalaireBrutVersNet(float _salary, String _com, String _period) {
+    static void SalaireBrutVersNet(float _salary, String _com, String _period, String _name, String _forname) {
 
         //String _commune = _com;
         String _perdiode = _period; // mensuel ou annuel
@@ -77,7 +78,9 @@ public class salaryFunction {
 
         _result = _salary - (_taxONSS + _taxRevenu + _taxCommunale + _taxCSSS);
 
-        System.out.println("Salaire brut : " + _salary +
+        System.out.println("Nom : " + _name +
+                "<br aria-hidden=\"true\">\nPrénom : " + _forname +
+                "<br aria-hidden=\"true\">\nSalaire brut : " + _salary +
                 "<br aria-hidden=\"true\">\nCommune : " + _com +
                 "<br aria-hidden=\"true\">\nPerdiode : " + _perdiode +
                 "<br aria-hidden=\"true\">" +
