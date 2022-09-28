@@ -2,6 +2,10 @@ import java.text.DecimalFormat;
 
 public class salaryFunction {
 
+    public static String forname = "";
+    public static String name = "";
+    public static String regNational = "";
+
     public static void main(String[] args) {
 
         // args[0] = nom fonction
