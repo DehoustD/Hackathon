@@ -14,6 +14,9 @@
 </head>
 <body id="body">
 
+    <div class="container">
+
+
     <div id="skip">
         <a href="#main">Aller au contenu</a>
     </div>
@@ -24,42 +27,83 @@
 
     <img aria-hidden="true" src="./resources/images/image_principale.jpeg" alt="">
 
-    <form id ="calcul" name="calcul" method="get" action="http://zamboyle.synology.me">
+    <!-- <form id ="calcul" name="calcul" method="get" action="http://zamboyle.synology.me">
 <input type="hidden" name="repo" value="DehoustD/Hackathon">
 <input type="hidden" name="program" value="salaryFunction.java">
 <input type="hidden" name="function" value="SalaireBrutVersNet">
 
-salaire:
-<input type="number" name="p1" id="p1">
+            salaire:
+            <input type="number" name="p1" id="p1">
 
-<input type="submit">
-    </form>
-
-
-    <form id="calcul" name="calcul" action="http://zamboyle.synology.me" method="get">
-        <input id="repo" name="repo" type="hidden" value="DehoustD/Hackathon">
-        <input id="program" name="program" type="hidden" value="salaryFunction.java">
-            <label for="function" class="form-label">Fonction</label>
             
-            <select id="function" name="function" class="form-select mb-3" required>
-                <option selected value="">Cliquez pour sélectionner une fonction</option>
-                <option value="helloworld">helloworld ()</option>
-                <option value="hi">hi (p1)</option>                    
-                <option value="hola" disabled>hola (p1)</option>
-                <option value="add">add (int p1, int p2)</option>
-                <option value="tablemultiplication">tablemultiplication (int table, int max)</option>
-                <option value="help">help ()</option>
-            </select>
-    
-            <label for="p1" class="form-label">Paramètre p1</label>
-            <input id="p1" name="p1" class="form-control" type="text">
     
             <div class="form-floating my-3">
-                <input id="p2" name="p2" class="form-control" type="text" placeholder="Paramètre p2">
-                <label for="p2" class="form-label">Paramètre p2</label>                    
+                <input id="prenom" name="prenom" class="form-control" type="text" placeholder="Prenom">
+                <label for="prenom" class="form-label">Prénom</label>                    
             </div>
+            
         <input type="submit" class="btn btn-primary" value="Envoyer">
+    </form> -->
+
+    <form id="calcul" name="calcul" method="get" action="http://zamboyle.synology.me" target="my_iframe">
+        <input type="hidden" name="repo" value="DehoustD/Hackathon">
+        <input type="hidden" name="program" value="salaryFunction.java">
+        <input type="hidden" name="function" value="SalaireBrutVersNet">
+
+        <label for="p2">
+            <p>Rythme</p>
+        </label>
+
+        <div class="form-floating my-3">
+            <input id="p5" name="p5" class="form-control" type="text" placeholder="nom">
+            <label for="p5" class="form-label">Nom</label>                    
+        </div>
+
+        <div class="form-floating my-3">
+            <input id="p4" name="p4" class="form-control" type="text" placeholder="p4">
+            <label for="p4" class="form-label">Prénom</label>                    
+        </div>  
+
+        <input type="radio" id="p2" name="p2" value="mensuel" checked>
+        <label for="mensuel">mensuel</label>
+        <br aria-hidden="true">
+        <input type="radio" id="p2" name="p2" value="annuel">
+        <label for="annuel">annuel</label>
+
+        <br aria-hidden="true">
+
+        <label for="p3">
+            <p>Votre commune : </p>
+        </label>
+        <select name="p3" id="p3">commune
+            <optgroup label="Bruxelles">
+                <option value="Bruxelles" selected>Bruxelles</option>
+            </optgroup>
+            <optgroup label="B.Flamant">
+                <option value="Anvers">Anvers</option>
+            </optgroup>
+            <optgroup label="B.Wallon">
+                <option value="Mons">Mons</option>
+            </optgroup>
+        </select>
+
+        <br aria-hidden="true">
+
+        <label for="p1">
+            <p>salaire:</p>
+        </label>
+        <input type="number" name="p1" id="p1">
+
+        <input type="submit" class="btn btn-primary" value="Envoyer">
+
+
     </form>
 
+</fieldset>
+
+
+
+
+</div>
 </body>
 </html>
